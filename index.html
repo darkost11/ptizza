@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
+
+    <title>Ptizza</title>
+</head>
+<body>
+    <div class="canvas-container">
+        <canvas id="canvas"></canvas>
+        <div class="header text">
+            <div class="score-container">
+                <div id="score"></div>
+                <div id="high-score"></div>
+            </div>
+            
+            <img id="pause" src="assets/pause.png">
+            <div id="levels-container-text">Select level</div>
+            <div id="level-description"></div>
+        </div>
+        <div class="game-over-message">
+            <div class="game-over text">Game over!</div>
+            <div class="button text retry">Retry</div>
+            <div class="button text menu">Main menu</div>
+        </div>
+        <div class="start-message">
+            <div class="text">Jump to start</div>
+        </div>
+        <div class="levels-container"></div>
+    </div>
+    <script src="score.js"></script>
+    <script src="bird.js"></script>
+    <script src="background.js"></script>
+    <script src="obstacles.js"></script>
+    <script src="display.js"></script>
+    <script src="input.js"></script>
+    <script src="levels.js"></script>
+    <script src="states.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+body {
+    background-color:  #1a1a2e;
+
+}
+
+
+.canvas-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#canvas {
+    width: 600px;
+    height: 600px;
+    background-color: #cacae6;
+}
+
+@media (max-width: 468px){
+    #canvas {
+        width: 340px;
+        height: 600px;
+    }
+}
+.text {
+  font-family: "Jersey 25", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.header {
+    position: absolute;
+    width: 100%;
+    font-size: 30px;
+    top: -40px;
+    height: 40px;
+    color: #e6e6fa; 
+}
+
+.header #level-description {
+    position: absolute;
+    top: 0px;
+    right: 0px
+}
+
+.header #pause {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    border: #e6e6fa solid 2px;
+    top: 0;
+    right: 0;  
+}
+
+.header .score-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.header #pause:hover {
+    cursor: pointer;
+}
+
+.game-over-message {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 140px;
+    background-color: #591c9e;
+    padding: 10px;
+    padding-top: 20px;
+    text-align: center;
+    border: 4px black solid;
+    display: none;
+}
+
+.game-over-message .game-over {
+    position: relative;
+    bottom: 10px;
+    font-size: 46px;
+    color: #e6e6fa;
+}
+
+.game-over-message .button {
+   position: absolute;
+   font-size: 32px;
+   line-height: 34px;
+   text-align: center;
+   width: 80%;
+   left: 50%;
+   transform: translateX(-50%);
+   color: black;
+   background-color: #b73bec;
+}
+
+.game-over-message .button:hover {
+    cursor: pointer;
+    background-color: #e29eff;
+}
+
+.game-over-message .retry {
+    bottom: 56px;
+}
+.game-over-message .menu {
+    bottom: 10px;
+}
+
+.start-message {
+    position: absolute;
+    top: 10%;
+    text-align: center;
+    width: 100%;
+    font-size: 50px;
+}
+
+.levels-container {
+    margin-left: 4%;
+    position: absolute;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    align-items: center;
+    align-content: center;
+    grid-template-rows: repeat(3, 33%);
+    grid-template-columns: repeat(2, 50%);
+}
+
+.level-button {
+    position: relative;
+    text-align: center;
+    /* container-type: inline-size; */
+
+    background-color: #591c9e;
+    border: 5px #34125c solid;
+    width: 80%;
+    height: 80%;
+    font-size: 30px;
+}
+
+.level-button:hover {
+    cursor: pointer;
+    background-color: #7827d4
+}
+.level-button .text {
+    font-size: 40px;
+    line-height: 21cqh;
+    color: #e6e6fa;
+    border: 2px solid red;
+}
+
+.locked {
+    background-color: #2f0e55;
+    width: 100%;
+    height: 100%;
+    opacity: 20%;
+    cursor: default;
+}
