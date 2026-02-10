@@ -1,23 +1,30 @@
 /** @type {HTMLCanvasElement} */
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
+const MAX_WIDTH = 600;
 let WIDTH, HEIGHT;
-let lastTime;
-let dt;
 
 function resizeCanvas(){
-    if (window.innerWidth <= 468) {
-        WIDTH = canvas.width = 340;
-        HEIGHT = canvas.height = 600;
-}
-    else {
-        WIDTH = canvas.width = 600;
-        HEIGHT = canvas.height = 600;
+    HEIGHT = canvas.height = window.innerHeight - 100;
+    if (window.innerWidth < MAX_WIDTH) {
+        WIDTH = canvas.width = window.innerWidth - 20;
+        setSmallScreenMode();
     }
+    else {
+        WIDTH = canvas.width = MAX_WIDTH;
+        setBigScreenMode();
+    }
+
+    canvas.style.setProperty("width", `${WIDTH}px`);
+    canvas.style.setProperty("height", `${HEIGHT}px`);
 }
 
 window.addEventListener("resize", resizeCanvas);
 resizeCanvas();
+
+let lastTime;
+let dt;
+
 // Preload assets
 currentLevel = 1;
 launchLevel();

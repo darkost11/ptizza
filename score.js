@@ -1,38 +1,44 @@
 const REQUIRED_SCORES = [
     null,
     0,
-    30, // 1
-    60, 
-    60,
-    40,
-    60
+    30,
+    50, 
+    30,
+    30,
+    30,
 ]
 
-let highScores;
+const STARTING_SCORES = [
+    null,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+]
+
+let highScores = [];
 loadHighScores();
+
 
 function resetHighScores(){
     localStorage.setItem(
         "highScores", 
-        JSON.stringify([
-            null,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-        ])
+        JSON.stringify(STARTING_SCORES)
     )
+    saveHighScores();
 }
 
 function loadHighScores(){
     const data = localStorage.getItem("highScores");
-    if (!data){
+    if (!data || (JSON.parse(data).length != numberLevels + 1)){
         resetHighScores();
+        highScores = STARTING_SCORES;
     }
-
-    highScores = JSON.parse(data);
+    else { 
+        highScores = JSON.parse(data);
+    }
 }
 
 function saveHighScores(){
@@ -69,7 +75,8 @@ function updateCurrentHighScore(){
     currentHighScore = getHighScore(currentLevel);
 }
 
-function unlockAllLevels(){
+function setRequiredHighScores(){
+    highScores = STARTING_SCORES;
     for (let level = 1; level < numberLevels; level++){
         highScores[level] = REQUIRED_SCORES[level + 1]
     }

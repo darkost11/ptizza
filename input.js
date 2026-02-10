@@ -34,7 +34,7 @@ document.addEventListener("keydown", event => {
     }
 })
 
-canvas.addEventListener("touchstart", event => {
+canvas.addEventListener("pointerdown", event => {
     if (isWaiting()){
         startGame();
     }
@@ -42,16 +42,6 @@ canvas.addEventListener("touchstart", event => {
         doBirdAction();
     } 
 })
-
-
-// canvas.addEventListener("mousedown", event => {
-//     if (isWaiting()){
-//         startGame();
-//     }
-//     else if (isInGame()){
-//         doBirdAction();
-//     } 
-// })
 
 
 // Buttons

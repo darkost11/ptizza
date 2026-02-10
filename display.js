@@ -1,13 +1,13 @@
 const scoreDisplay = document.querySelector("#score");
 const highScoreDisplay = document.querySelector("#high-score")
-const pauseButton = document.querySelector("#pause");
+const pauseButton = document.querySelector("#pause-button");
 const startMessage = document.querySelector(".start-message");
 const gameOverMessage = document.querySelector(".game-over-message");
 const retryButton = document.querySelector(".game-over-message .retry");
 const menuButton = document.querySelector(".menu");
 const levelsContainer = document.querySelector(".levels-container");
 const levelDescription = document.querySelector("#level-description");
-const levelsContainerText = document.querySelector("#levels-container-text");
+const levelsContainerText = document.querySelector("#select-level");
 const levelButtons = levelsContainer.children;
 
 let startMessageOpacityArgument = 0;
@@ -17,6 +17,7 @@ const startMessageAnimationSpeed = 2;
 let currentScore;
 let currentHighScore;
 let shouldDrawRequiredScore;
+
 
 // Loading assets
 function loadAssets(){
@@ -192,7 +193,3 @@ function updateUnlockedLevelsDisplay(){
         levelButtonText.innerHTML = i;
     }
 }
-
-
-
-

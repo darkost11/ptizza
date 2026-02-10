@@ -12,8 +12,15 @@ const numberLevels = 6;
 let unlockedLevels;
 let nextLevel = 1;
 let currentLevel;
+
 initLevelGrid();
 
+// For small screen mode
+let levelThreeSpeedMultiplier;
+let levelThreeObstacleDistanceMultiplier;
+let levelThreeMinObstacleHeight;
+let levelFiveSpeedMultiplier;
+let levelFiveObstacleDistanceMultiplier;
 
 function countUnlockedLevels(){
     let totalUnlocked = 0;
@@ -37,6 +44,22 @@ function updateLevels(){
     updateLevelHoverListeners();
 }
 
+function setSmallScreenMode(){
+    levelThreeSpeedMultiplier = 0.75;
+    levelThreeObstacleDistanceMultiplier = 0.9;
+    levelThreeMinObstacleHeight = HEIGHT / 8;
+    levelFiveSpeedMultiplier = 0.7;
+    levelFiveObstacleDistanceMultiplier = 0.8;
+}
+
+function setBigScreenMode(){
+    levelThreeSpeedMultiplier = 1;
+    levelThreeObstacleDistanceMultiplier = 1;
+    levelThreeMinObstacleHeight = HEIGHT / 20;
+    levelFiveSpeedMultiplier = 1;
+    levelFiveObstacleDistanceMultiplier = 1;
+}
+
 // Level config
 function initDefaultSetting(){
     // score
@@ -50,16 +73,16 @@ function initDefaultSetting(){
     freeFall = 0.6;
     jumpForce = 20;
     gravityMode = false;
-    startingY = HEIGHT/2;
+    startingY = HEIGHT / 2;
     maxRotationAngle = Math.PI / 24;
     SPRITE.src = Bird.RED;
 
     // obstacles
     obstacleWidth = 120;
-    minObstacleHeight = 30;
-    maxObstacleHeight = 300;
     gapSize = 210;
-    obstacleDistance = 200 ;
+    minObstacleHeight = HEIGHT / 20;
+    maxObstacleHeight = HEIGHT / 2;
+    obstacleDistance = 200;
     obstacleStartingX = 320;  
     obstacleEdgeHeight = 40;
     obstacleOscillation = false;
@@ -84,8 +107,8 @@ function initLevelTwo(){
     obstacleSpeed = 2.5;
     obstacleDistance = 70;
     gapSize = 260;
-    minObstacleHeight = 60;
-    maxObstacleHeight = 160;
+    minObstacleHeight = HEIGHT / 8;
+    maxObstacleHeight = HEIGHT / 2 - 50;
 }
 
 function initLevelThree(){
@@ -93,13 +116,15 @@ function initLevelThree(){
     maxRotationAngle = Math.PI / 36;
     startingY = HEIGHT - 100;
     
-    obstacleSpeed = 8;
-    obstacleDistance = 320;
+    obstacleSpeed = 8 * levelThreeSpeedMultiplier;
+    obstacleDistance = 320 * levelThreeObstacleDistanceMultiplier;
     hitboxRadius = 30;
     gapSize = 180;
     horizontalCollisionMargin = hitboxRadius / 8;
     diagonalCollisionMargin = hitboxRadius / 2;
     verticalCollisionMargin = hitboxRadius / 8;
+
+    minObstacleHeight = levelThreeMinObstacleHeight;
 
     SPRITE.src = Bird.YELLOW;
     setObstacleSprite(Pipe.GREEN, PipeEdge.GREEN);
@@ -123,7 +148,8 @@ function initLevelFive(){
     initLevelThree();
     gravityMode = true;
     maxVelocity = 10;
-    obstacleSpeed = 7;
+    obstacleDistance =  320 * levelFiveObstacleDistanceMultiplier;
+    obstacleSpeed = 7 * levelFiveSpeedMultiplier;
 
     SPRITE.src = Bird.GREEN;
     setObstacleSprite(Pipe.PURPLE, PipeEdge.PURPLE);
@@ -137,7 +163,7 @@ function initLevelSix(){
     gapSize = 290;
     obstacleDistance = 230;
     obstacleWidth = 240;
-    obstacleSpeed = 4; 
+    obstacleSpeed = 4;
     startingY += 100;
 
     diagonalCollisionMargin = hitboxRadius / 6;

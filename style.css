@@ -1,8 +1,6 @@
 body {
     background-color:  #1a1a2e;
-
 }
-
 
 .canvas-container {
     position: absolute;
@@ -12,17 +10,9 @@ body {
 }
 
 #canvas {
-    width: 600px;
-    height: 600px;
     background-color: #cacae6;
 }
 
-@media (max-width: 468px){
-    #canvas {
-        width: 340px;
-        height: 600px;
-    }
-}
 .text {
   font-family: "Jersey 25", sans-serif;
   font-weight: 400;
@@ -32,37 +22,53 @@ body {
 .header {
     position: absolute;
     width: 100%;
-    font-size: 30px;
-    top: -40px;
     height: 40px;
+    font-size: 30px;
+    bottom: calc(100% + 4px);
     color: #e6e6fa; 
 }
 
+.header #select-level {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
 .header #level-description {
     position: absolute;
-    top: 0px;
-    right: 0px
+    bottom: 0;
+    right: 0;
 }
 
-.header #pause {
+.header #pause-button {
     position: absolute;
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 38px;
     border: #e6e6fa solid 2px;
-    top: 0;
-    right: 0;  
+    right: 0;
+    bottom: -4px;
 }
 
 .header .score-container {
     position: absolute;
-    left: 0;
-    top: 0;
     display: flex;
+    bottom: 0;
+    left: 0;
     gap: 30px;
 }
 
-.header #pause:hover {
+.header #pause-button:hover {
     cursor: pointer;
+}
+
+@media (max-width: 468px) {
+    .header {
+        font-size: 24px;
+    }
+
+    .header #pause-button {
+        width: 32px;
+        height: 32px;
+    }
 }
 
 .game-over-message {
@@ -134,14 +140,11 @@ body {
 
 .level-button {
     position: relative;
-    text-align: center;
-    /* container-type: inline-size; */
-
     background-color: #591c9e;
     border: 5px #34125c solid;
+    text-align: center;
     width: 80%;
     height: 80%;
-    font-size: 30px;
 }
 
 .level-button:hover {
@@ -149,16 +152,19 @@ body {
     background-color: #7827d4
 }
 .level-button .text {
-    font-size: 40px;
-    line-height: 21cqh;
+    font-size: 50px;
+    line-height: 22cqh;
     color: #e6e6fa;
-    border: 2px solid red;
 }
 
 .locked {
+    position: absolute;
+    top: 0;
+    left: 0;
+    
     background-color: #2f0e55;
+    font-size: 40px;
     width: 100%;
     height: 100%;
-    opacity: 20%;
     cursor: default;
 }
