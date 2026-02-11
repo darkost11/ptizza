@@ -60,6 +60,14 @@ body {
     cursor: pointer;
 }
 
+.complete-message {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    color: lavender;
+}
+
 @media (max-width: 468px) {
     .header {
         font-size: 24px;

@@ -75,12 +75,12 @@ function handleLevelMouseEnter(event){
         const level = parseInt(event.target.dataset.level);
 
         if (level <= unlockedLevels){
-            levelDescription.textContent = `LEVEL ${level}. HIGH: ${getHighScore(level)}`;
+            levelDescription.textContent = `Level ${level}. HIGH: ${getHighScore(level)}`;
         } else if (level == unlockedLevels + 1){
-            levelDescription.textContent = `LEVEL ${level - 1}'S HIGH: ${getHighScore(level - 1)}/${getRequiredScore(level)}`;
+            levelDescription.textContent = `Level ${level - 1}'s HIGH: ${getHighScore(level - 1)}/${getRequiredScore(level)}`;
         }
         else {
-            levelDescription.textContent = `UNLOCK LEVEL ${level - 1} FIRST`;
+            levelDescription.textContent = `Unlock level ${level - 1} first`;
         }
     }
 }

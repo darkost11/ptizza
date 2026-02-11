@@ -6,6 +6,7 @@ const REQUIRED_SCORES = [
     30,
     30,
     30,
+    10
 ]
 
 const STARTING_SCORES = [
@@ -62,6 +63,7 @@ function setHighScore(level, newScore){
         highScores[level] = newScore;
         console.log(`high score of level ${level} is set to ${newScore}`);
     }
+    saveHighScores();
 }
 
 function incrementHighScore(level){
@@ -77,7 +79,7 @@ function updateCurrentHighScore(){
 
 function setRequiredHighScores(){
     highScores = STARTING_SCORES;
-    for (let level = 1; level < numberLevels; level++){
+    for (let level = 1; level <= numberLevels; level++){
         highScores[level] = REQUIRED_SCORES[level + 1]
     }
     saveHighScores();
