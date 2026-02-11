@@ -9,15 +9,6 @@ let maxRotationAngle;
 let gravityMode;
 let hitbox;
 
-function createHitbox(){
-    return {
-        radius: hitboxRadius,
-        x: hitboxRadius + WIDTH/10,
-        y: HEIGHT/2,
-        vel: 0, 
-    }
-}
-
 const Bird = {
     RED: "assets/bird/red.png",
     YELLOW: "assets/bird/yellow.png",
@@ -25,6 +16,15 @@ const Bird = {
     GREEN: "assets/bird/green.png",
     TURQUOISE: "assets/bird/turquoise.png",
     GREY: "assets/bird/grey.png",
+}
+
+function createHitbox(){
+    return {
+        radius: hitboxRadius,
+        x: hitboxRadius + WIDTH/10,
+        y: HEIGHT/2,
+        vel: 0, 
+    }
 }
 
 function drawBird(){

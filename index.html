@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +14,7 @@
 <body>
     <div class="canvas-container">
         <canvas id="canvas"></canvas>
+
         <div class="header text">
             <div class="score-container">
                 <div id="score"></div>
@@ -24,16 +25,20 @@
             <div id="select-level">Select level</div>
             <div id="level-description"></div>
         </div>
-        <div class="complete-message text">Thanks for playing💜</div>
+
+        <div class="levels-container"></div>
+        
+        <div class="start-message">
+            <div class="text">Jump to start</div>
+        </div>
+
         <div class="game-over-message">
             <div class="game-over text">Game over!</div>
             <div class="button text retry">Retry</div>
             <div class="button text menu">Main menu</div>
         </div>
-        <div class="start-message">
-            <div class="text">Jump to start</div>
-        </div>
-        <div class="levels-container"></div>
+        
+        <div class="complete-message text">Thanks for playing💜</div>
     </div>
     <script src="display.js"></script>
     <script src="input.js"></script>

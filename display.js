@@ -62,7 +62,7 @@ function updateScoreDisplay(){
 }
 
 function updateRequiredScoreFlag(){
-    shouldDrawRequiredScore = (currentLevel === unlockedLevels)
+    shouldDrawRequiredScore = (currentLevel === unlockedLevels && !isGameComplete());
 }
 
 function displayPauseButton(){
