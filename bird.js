@@ -43,7 +43,7 @@ function drawBird(){
 
 function drawHitbox(){
     ctx.beginPath();
-    ctx.arc(hitbox.x, hitbox.y, hitbox.radius, 0, 2*Math.PI);
+    ctx.arc(hitbox.x, Math.floor(hitbox.y), hitbox.radius, 0, 2*Math.PI);
     ctx.fillStyle = "blue"
     ctx.fill(); 
     ctx.closePath();

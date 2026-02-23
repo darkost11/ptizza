@@ -41,8 +41,12 @@ canvas.addEventListener("pointerdown", event => {
     else if (isInGame()){
         doBirdAction();
     } 
-})
 
+    else if(isGameOver()){
+        launchLevel();
+    }
+    
+}, false)
 
 // Buttons
 
