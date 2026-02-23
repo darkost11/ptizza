@@ -115,7 +115,7 @@ function initLevelTwo(){
     gapSize = 260;
     obstacleSpeed = 2.5;
     obstacleDistance = 70;
-    minObstacleHeight = HEIGHT / 14;
+    minObstacleHeight = HEIGHT / 12;
     maxObstacleHeight = HEIGHT / 2 - 50;
 }
 

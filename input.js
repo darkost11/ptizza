@@ -29,8 +29,7 @@ document.addEventListener("keydown", event => {
         currentLevel = parseInt(event.key);
         if (currentLevel <= unlockedLevels){
             launchLevel();
-        }
-        
+        }   
     }
 })
 
@@ -45,7 +44,7 @@ canvas.addEventListener("pointerdown", event => {
     else if(isGameOver()){
         launchLevel();
     }
-    
+
 }, false)
 
 // Buttons
