@@ -5,7 +5,6 @@ const startMessage = document.querySelector(".start-message");
 const gameOverMessage = document.querySelector(".game-over-message");
 const retryButton = document.querySelector(".game-over-message .retry");
 const menuButton = document.querySelector(".menu");
-const completeMessage = document.querySelector(".complete-message");
 const levelsContainer = document.querySelector(".levels-container");
 const levelDescription = document.querySelector("#level-description");
 const levelsContainerText = document.querySelector("#select-level");
@@ -127,22 +126,10 @@ function hideLevels(){
     levelsContainer.style.setProperty("display", "none");
 }
 
-function displayCompleteMessage() {
-    if (isGameComplete()){
-        completeMessage.style.setProperty("display", "block");
-    } else {
-        hideCompleteMessage();
-    }
-}
-
-function hideCompleteMessage(){
-    completeMessage.style.setProperty("display", "none");
-}
 
 // Displaying MENU, HUD
 function displayHUD(){
     hideMenu();
-    hideCompleteMessage();
     hideGameOverMessage();
     updateScoreDisplay();
     showHUD();
@@ -158,7 +145,6 @@ function showMenu(){
     displayLevels();
     displayLevelsContainerText();
     displayLevelDescription();
-    displayCompleteMessage();
 }
 
 function hideMenu(){

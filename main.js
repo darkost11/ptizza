@@ -2,10 +2,13 @@
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 const MAX_WIDTH = 600;
+const MAX_HEIGHT = 800;
 let WIDTH, HEIGHT;
 
+if (isGameComplete())
+    levelDescription.textContent = "Thanks for playing💜";
+
 function resizeCanvas(){
-    HEIGHT = canvas.height = window.innerHeight - 100;
     if (window.innerWidth < MAX_WIDTH) {
         WIDTH = canvas.width = window.innerWidth - 20;
         setSmallScreenMode();
@@ -15,11 +18,18 @@ function resizeCanvas(){
         setBigScreenMode();
     }
 
+    if (window.innerHeight - 100 < MAX_HEIGHT) {
+        HEIGHT = canvas.height = window.innerHeight - 100;
+    } else {
+        HEIGHT = canvas.height = MAX_HEIGHT;
+    }
+
     canvas.style.setProperty("width", `${WIDTH}px`);
     canvas.style.setProperty("height", `${HEIGHT}px`);
 }
 
 window.addEventListener("resize", resizeCanvas);
+resizeCanvas();
 resizeCanvas();
 
 let lastTime;

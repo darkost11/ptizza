@@ -1,7 +1,7 @@
 document.addEventListener("keydown", event => {
     
-    if ((event.key === " " || event.key === "w" || event.key === "W"
-        || event.key === "ArrowUp")){
+    if ((event.сode === "Space" || event.code === "KeyW" ||
+        event.key === "ArrowUp")){
         if (isWaiting())
             startGame();
         else if (isGameOver()){
@@ -90,7 +90,13 @@ function handleLevelMouseEnter(event){
 
 function handleLevelMouseLeave(event){
     if (event.target.classList.contains("level-button")){
-        levelDescription.textContent = "";
+        let message;
+        if (isGameComplete()){
+            message = "Thanks for playing💜";
+        } else {
+            message = ""
+        }
+        levelDescription.textContent = message;
     }
 }
 

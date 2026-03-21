@@ -61,7 +61,7 @@ function setSmallScreenMode(){
 function setBigScreenMode(){
     levelThreeSpeedMultiplier = 1;
     levelThreeObstacleDistanceMultiplier = 1;
-    levelThreeMinObstacleHeight = HEIGHT / 20;
+    levelThreeMinObstacleHeight = HEIGHT / 12;
     levelFiveSpeedMultiplier = 1;
     levelFiveObstacleDistanceMultiplier = 1;
     levelFiveAccelerationMultiplier = 1;
@@ -123,7 +123,7 @@ function initLevelThree(){
     initDefaultSetting();
 
     maxRotationAngle = Math.PI / 36;
-    startingY = HEIGHT - 100;
+    startingY = HEIGHT * 3/4;
     hitboxRadius = 30;
     
     gapSize = 180;
@@ -155,6 +155,7 @@ function initLevelFour(){
 function initLevelFive(){
     initLevelThree();
 
+    startingY = HEIGHT * 3/4;
     gravityMode = true;
     freeFall = freeFall * levelFiveAccelerationMultiplier;
     maxVelocity = 10;
